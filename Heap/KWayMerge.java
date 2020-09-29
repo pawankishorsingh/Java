@@ -2,13 +2,18 @@ import java.util.*;
 
 public class Demo {
     static void printKWayMergedArray(List<Integer> ... list){
+        //Merge all lists into one combined list
         List<Integer> listMerged = new ArrayList<>();
         for (List<Integer> l: list)
             listMerged.addAll(l);
+        
+        //Add all items in min-heap
         PriorityQueue<Integer> heap = new PriorityQueue<>();
         for (Integer i: listMerged){
             heap.add(i);
         }
+        
+        //Print heap items one by one
         while (!heap.isEmpty()){
             System.out.print(heap.poll() + " "); //0 1 2 3 4 5 6 7 8 
         }

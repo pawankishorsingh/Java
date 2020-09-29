@@ -5,6 +5,7 @@ public class Demo {
         int[] leftProduct = new int[arr.length];
         int[] rightProduct = new int[arr.length];
         int[] result = new int[arr.length];
+        
         //Left product array
         for(int i=0; i< arr.length; i++){
             if (i==0){
@@ -14,6 +15,7 @@ public class Demo {
             }
         }
         System.out.println("Left:" + Arrays.toString(leftProduct)); //Left:[1, 1, 2, 6, 24]
+        
         //Right product array
         for(int j=arr.length-1; j>=0; j--){
             if (j==arr.length-1){
@@ -23,6 +25,8 @@ public class Demo {
             }
         }
         System.out.println("Right:" + Arrays.toString(rightProduct)); //Right:[120, 60, 20, 5, 1]
+        
+        // Finally create result array using above tow left & right arrays
         for(int k=0; k< arr.length; k++){
             result[k] = leftProduct[k] * rightProduct[k];
         }

@@ -5,11 +5,10 @@ class Node {
         this.data = data;
     }
 }
-
-class LinkedList {
+class LinkedList{
     Node head;
     public void append (int data){
-        if (this.head == null){
+        if (head == null){
             head = new Node(data);
             return;
         }
@@ -19,23 +18,25 @@ class LinkedList {
         }
         temp.next = new Node(data);
     }
+
     @Override
     public String toString(){
+        StringBuilder result = new StringBuilder();
+        result.append("{head");
         Node temp = head;
-        String result = "{head";
-        while (temp !=null){
-            result += " -> " +temp.data;
+        while (temp != null){
+            result.append(" -> " + temp.data);
             temp = temp.next;
         }
-        return result+"-> null}";
+        return result.append(" -> null}").toString();
     }
 }
-
-public class Demo{
+public class Demo {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list.append(10);
         list.append(20);
-        System.out.println(list); //{head -> 10 -> 20-> null}
+        list.append(30);
+        System.out.println(list);
     }
 }

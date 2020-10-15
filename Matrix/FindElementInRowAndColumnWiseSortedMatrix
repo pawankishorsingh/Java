@@ -1,16 +1,15 @@
 public class Demo {
-    public static boolean findElementInRowAndColumnWiseSortedMatrix(int[][] matrix, int num, int row, int col){
-        int index_x = 0;
-        int index_y = col-1;
-        while(index_x>=0 && index_x < row && index_y>=0 && index_y<col){
-            if (matrix[index_x][index_y] == num){
-//                System.out.println(num+ " is found at index "+ index_x + "," + index_y);
+    public static boolean findElementInRowAndColumnWiseSortedMatrix(int[][] matrix, int data){
+        int row = 0;
+        int column = matrix[0].length-1;
+        while(row<matrix.length && column>=0){
+            if (matrix[row][column] == data){
                 return true;
             }
-            if (num < matrix[index_x][index_y])
-                index_y--;
+            if (data < matrix[row][column])
+                column--;
             else
-                index_x++;
+                row++;
         }
         return false;
     }
@@ -20,10 +19,10 @@ public class Demo {
                 {4,9,19},
                 {6,10,24}
         };
-        System.out.println("-100 Found?:" + findElementInRowAndColumnWiseSortedMatrix(matrix,-100, 3,3));
-        System.out.println("2 Found?:" + findElementInRowAndColumnWiseSortedMatrix(matrix,2, 3,3));
-        System.out.println("10 Found?:" + findElementInRowAndColumnWiseSortedMatrix(matrix,10, 3,3));
-        System.out.println("24 Found?:" + findElementInRowAndColumnWiseSortedMatrix(matrix,24, 3,3));
-        System.out.println("420 Found?:" + findElementInRowAndColumnWiseSortedMatrix(matrix,420, 3,3));
+        System.out.println("-100 Found?:" + findElementInRowAndColumnWiseSortedMatrix(matrix,-100)); //false
+        System.out.println("2 Found?:" + findElementInRowAndColumnWiseSortedMatrix(matrix,2)); //true
+        System.out.println("10 Found?:" + findElementInRowAndColumnWiseSortedMatrix(matrix,10)); //true
+        System.out.println("24 Found?:" + findElementInRowAndColumnWiseSortedMatrix(matrix,24)); //true
+        System.out.println("420 Found?:" + findElementInRowAndColumnWiseSortedMatrix(matrix,420)); //false
     }
 }

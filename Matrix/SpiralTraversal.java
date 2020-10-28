@@ -1,6 +1,12 @@
+/*
+                {1,   2,   3,  4},
+                {12,  13,  14, 5},
+                {11,  16,  15, 6},
+                {10,  9,   8,  7}
+ */
 import java.util.Arrays;
 
-public class Demo {
+public class Test {
     static void printMatrixInSpitalMannerIteratively(int[][] matrix){
         int rowStart = 0;
         int rowEnd = matrix.length-1;
@@ -49,14 +55,14 @@ public class Demo {
     }
     public static void main(String[] args) {
         int[][] matrix = {
-                {1,    2,   3,   4},
-                {5,    6,   7,   8},
-                {9,   10,  11,  12},
-                {13,  14,  15,  16}
+                {1,   2,   3,  4},
+                {12,  13,  14, 5},
+                {11,  16,  15, 6},
+                {10,  9,   8,  7}
         };
-        printMatrixInSpitalMannerIteratively(matrix); //1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10 
+        printMatrixInSpitalMannerIteratively(matrix); //1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
         System.out.println();
-        printMatrixInSpitalMannerRecursively(matrix, 0, 0, 3, 3); //1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10 
+        printMatrixInSpitalMannerRecursively(matrix, 0, 0, 3, 3); //1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
 
     }
 }
